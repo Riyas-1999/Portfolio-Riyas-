@@ -6,11 +6,16 @@
     <title>Riyasmohamed A. | Full Stack Developer</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
 </head>
 <body>
 
+    <div id="star-container"></div>
+
     <nav>
-        <div class="logo">Riyas.Dev</div>
+        <div class="logo">Riyas</div>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
@@ -22,57 +27,113 @@
 
     <section id="hero">
         <div class="hero-content">
-            <h1>Hi, I'm <span>Riyasmohamed</span></h1>
-            <h2>Python Full Stack Developer</h2>
+            <div class="theme-toggle-wrapper">
+                <i class="fas fa-lightbulb" id="theme-btn" title="Switch Theme"></i>
+            </div>
+            <h1>Hi, I'm <span class="accent-text">Riyasmohamed</span></h1>
+            <h2><span class="typing-text"></span><span class="cursor">|</span></h2>
             <p>Passionate about building scalable web applications and continuously striving to improve my coding skills.</p>
             <div class="hero-buttons">
                 <a href="#projects" class="btn primary">View My Work</a>
                 <a href="https://github.com/Riyas-1999" target="_blank" class="btn secondary"><i class="fab fa-github"></i> GitHub</a>
             </div>
         </div>
-        <div class="anime-animation">
-            <div class="straw-hat">👒</div>
+        <div class="visual-content">
+            <div class="glow-circle"></div>
+            
+            <!-- Desk Setup -->
+            <div class="desk-setup">
+                <div class="lamp-wrapper">
+                    <div class="lamp-head"></div>
+                    <div class="lamp-arm"></div>
+                    <div class="lamp-base"></div>
+                    <div class="lamp-light-beam"></div>
+                </div>
+                <div class="laptop-wrapper">
+                    <div class="laptop-screen">
+                        <div class="code-editor">
+                            <span></span><span></span><span></span>
+                        </div>
+                    </div>
+                    <div class="laptop-base"></div>
+                </div>
+                <div class="table"></div>
+            </div>
         </div>
+        <div class="scroll-indicator"></div>
     </section>
 
     <section id="about">
         <h2 class="section-title">About Me</h2>
-        <div class="about-container">
-            <p>With a background in Mathematics and practical training in full stack development, I am eager to contribute to a dynamic development team. I am a self-motivated, quick learner with strong problem-solving skills.</p>
+        <div class="about-content">
+            <div class="about-card">
+                <div class="about-icon"><i class="fas fa-rocket"></i></div>
+                <h3>My Journey</h3>
+                <p>With a background in Mathematics and specialized training in Full Stack Development, I bring a unique analytical perspective to coding. I am eager to contribute to a dynamic team, building scalable solutions and solving complex problems efficiently.</p>
+            </div>
+            <div class="about-stats">
+                <div class="stat-item">
+                    <span class="stat-number">10+</span>
+                    <span class="stat-label">Projects</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Dedication</span>
+                </div>
+            </div>
         </div>
     </section>
 
     <section id="skills">
         <h2 class="section-title">Technical Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <i class="fab fa-python"></i>
-                <h3>Backend</h3>
-                <p>Core Python, Advanced Python (OOP, Decorators), Django (MVT, ORM, DTL)</p>
+        <div class="skills-container">
+            <div class="skill-progress-item">
+                <h4>Python & Django <span class="skill-percent">90%</span></h4>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" data-percent="90"></div>
+                </div>
             </div>
-            <div class="skill-card">
-                <i class="fab fa-js"></i>
-                <h3>Frontend</h3>
-                <p>HTML5, CSS3 (Flexbox, Grid), JavaScript (DOM, Events)</p>
+            <div class="skill-progress-item">
+                <h4>JavaScript <span class="skill-percent">75%</span></h4>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" data-percent="75"></div>
+                </div>
             </div>
-            <div class="skill-card">
-                <i class="fas fa-database"></i>
-                <h3>Databases & Tools</h3>
-                <p>SQL, MySQL, Git, GitHub</p>
+            <div class="skill-progress-item">
+                <h4>HTML5 & CSS3 <span class="skill-percent">85%</span></h4>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" data-percent="85"></div>
+                </div>
+            </div>
+            <div class="skill-progress-item">
+                <h4>SQL & MySQL <span class="skill-percent">80%</span></h4>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" data-percent="80"></div>
+                </div>
+            </div>
+            <div class="skill-progress-item">
+                <h4>Git & GitHub <span class="skill-percent">85%</span></h4>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" data-percent="85"></div>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="projects">
-        <h2 class="section-title">Featured Projects</h2>
+        <h2 class="section-title"> Projects</h2>
         <div class="projects-grid">
-            <div class="project-card">
+            <div class="project-card featured">
                 <h3>Django Web Apps</h3>
                 <ul>
                     <li>Movies Review Blog</li>
                     <li>Bus Ticket Booking Site</li>
                     <li>Students Administration Site</li>
                 </ul>
+                <div class="project-links">
+                    <a href="#" target="_blank" title="View Code"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                </div>
             </div>
             <div class="project-card">
                 <h3>Python Applications</h3>
@@ -81,14 +142,22 @@
                     <li>To-Do List</li>
                     <li>Rock Paper Scissor Game</li>
                 </ul>
+                <div class="project-links">
+                    <a href="#" target="_blank" title="View Code"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                </div>
             </div>
             <div class="project-card">
                 <h3>Frontend Interfaces</h3>
                 <ul>
                     <li>Bike Parking System</li>
-                    <li>Digital & Analog Watch (24hrs/12hrs)</li>
+                    <li>Digital & Analog Watch</li>
                     <li>Calculator</li>
                 </ul>
+                <div class="project-links">
+                    <a href="#" target="_blank" title="View Code"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                </div>
             </div>
         </div>
     </section>
@@ -97,26 +166,53 @@
         <h2 class="section-title">Education & Training</h2>
         <div class="timeline">
             <div class="timeline-item">
-                <h3>Python Full Stack Developer</h3>
-                <p>QSpiders, Chennai | 2024-2025</p>
+                <div class="timeline-icon"><i class="fas fa-code"></i></div>
+                <div class="timeline-content">
+                    <h3>Python Full Stack Developer</h3>
+                    <p>QSpiders, Chennai | 2024-2025</p>
+                </div>
             </div>
             <div class="timeline-item">
-                <h3>M.Sc. Mathematics</h3>
-                <p>Bharathiar University, Coimbatore | 2020-2022 | 73.83%</p>
+                <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
+                <div class="timeline-content">
+                    <h3>M.Sc. Mathematics</h3>
+                    <p>Bharathiar University, Coimbatore | 2020-2022 | 73.83%</p>
+                </div>
             </div>
             <div class="timeline-item">
-                <h3>B.Sc. Mathematics</h3>
-                <p>Jamal Mohamed College, Trichy | 2017-2020 | 81%</p>
+                <div class="timeline-icon"><i class="fas fa-university"></i></div>
+                <div class="timeline-content">
+                    <h3>B.Sc. Mathematics</h3>
+                    <p>Jamal Mohamed College, Trichy | 2017-2020 | 81%</p>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="contact">
         <h2 class="section-title">Get In Touch</h2>
-        <div class="contact-info">
-            <p><i class="fas fa-envelope"></i> sayirmohamed1999@gmail.com</p>
-            <p><i class="fas fa-phone"></i> +91 6382624940</p>
-            <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/riyasmohameda" target="_blank">linkedin.com/in/riyasmohameda</a></p>
+        <div class="contact-container">
+            <div class="contact-info-card">
+                <h3>Contact Info</h3>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>sayirmohamed1999@gmail.com</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <p>+91 6382624940</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <a href="https://linkedin.com/in/riyasmohameda" target="_blank">linkedin.com/in/riyasmohameda</a>
+                </div>
+            </div>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit" class="btn primary">Send Message</button>
+            </form>
         </div>
     </section>
 
