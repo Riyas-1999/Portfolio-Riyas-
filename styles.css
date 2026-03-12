@@ -98,6 +98,25 @@ body.day-mode .lamp-light-beam {
     opacity: 0;
 }
 
+/* Moon Animation for Night Mode */
+.moon {
+    position: absolute;
+    top: -40px;
+    right: -20px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    box-shadow: -15px 15px 0 0 #f1c40f;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: -1;
+}
+
+body.day-mode .moon {
+    opacity: 0;
+    transform: translateY(30px) rotate(45deg);
+}
+
 /* Navigation */
 nav {
     display: flex;
@@ -434,9 +453,6 @@ section {
     padding: 6rem 12%;
 }
 
-/* Highlight Projects Section with distinct background */
-
-
 .section-title {
     font-size: 2rem;
     margin-bottom: 4rem;
@@ -571,11 +587,6 @@ section {
     position: relative;
     z-index: 1;
     overflow: hidden;
-}
-
-/* Ensure project cards stand out against the highlighted section background */
-#projects .project-card {
-    background-color: var(--bg-color);
 }
 
 .project-card:hover {

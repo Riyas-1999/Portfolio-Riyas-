@@ -123,7 +123,23 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
     
-  
+    // Standalone Project Cards Animation (Fix for visibility)
+    // const projectCards = document.querySelectorAll(".project-card");
+    // if (projectCards.length > 0) {
+    //     gsap.from(projectCards, {
+    //         scrollTrigger: {
+    //             trigger: "#projects", // Triggers when the #projects section enters view
+    //             start: "top 95%",     // Start animation almost immediately when section appears
+    //             toggleActions: "play none none none"
+    //         },
+    //         opacity: 0,
+    //         y: 50,
+    //         duration: 0.8,
+    //         stagger: 0.2,
+    //         ease: "power3.out"
+    //     });
+    // }
+
     // Log message for HR / fellow developers
     console.log("%cHello! Thanks for checking out my portfolio code. Feel free to reach out!", "color: #64ffda; font-size: 16px; font-weight: bold; background: #0a192f; padding: 10px; border-radius: 5px;");
 });
