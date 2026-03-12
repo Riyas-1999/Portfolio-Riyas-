@@ -132,6 +132,14 @@ nav {
     transition: background-color 0.5s ease;
 }
 
+/* Mobile Menu Button */
+.menu-btn {
+    display: none;
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    cursor: pointer;
+}
+
 /* Theme Toggle Icon */
 .theme-toggle-wrapper {
     position: absolute;
@@ -712,7 +720,7 @@ section {
 /* Contact & Footer */
 .contact-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 3rem;
     align-items: center;
 }
@@ -796,9 +804,48 @@ footer {
 }
 
 @media (max-width: 768px) {
-    nav { padding: 1.5rem 5%; }
+    nav { 
+        padding: 1.5rem 5%; 
+    }
+    
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Hidden by default */
+        width: 80%;
+        height: 100vh;
+        background: var(--bg-light);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: -5px 0 15px var(--card-shadow);
+        transition: right 0.3s ease-in-out;
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links li {
+        margin: 1.5rem 0;
+    }
+
+    .nav-links a {
+        font-size: 1.2rem;
+    }
+
     #hero { flex-direction: column; padding-top: 8rem; text-align: center; }
+    .hero-content h1 { font-size: 2.5rem; }
+    .hero-content h2 { font-size: 1.8rem; }
+    
     .visual-content { margin-top: 3rem; width: 300px; height: 300px; }
     section { padding: 4rem 5%; }
     .section-title::after { display: none; }
+    .contact-container { grid-template-columns: 1fr; }
+    .skills-container { grid-template-columns: 1fr; }
 }
