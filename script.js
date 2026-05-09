@@ -250,3 +250,38 @@ document.addEventListener("DOMContentLoaded", function() {
     // Log message for HR / fellow developers
     console.log("%cHello! Thanks for checking out my portfolio code. Feel free to reach out!", "color: #64ffda; font-size: 16px; font-weight: bold; background: #0a192f; padding: 10px; border-radius: 5px;");
 });
+
+    emailjs.init("Wp-DppEbhT9SYmfG3");
+
+    document
+      .getElementById("contact-form")
+      .addEventListener("submit", function(event){
+
+        event.preventDefault();
+
+        emailjs.sendForm(
+          "service_epocnub",
+          "template_y345yfp",
+          this
+        )
+
+        .then(() => {
+
+          alert("✅ Message Sent Successfully!");
+
+          document
+            .getElementById("contact-form")
+            .reset();
+
+        })
+
+        .catch((error) => {
+
+          alert("❌ Failed To Send");
+
+          console.log(error);
+
+        });
+
+      });
+
