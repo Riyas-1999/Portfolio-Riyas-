@@ -861,6 +861,98 @@ footer {
     visibility: visible;
 }
 
+.success-popup {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(11, 17, 33, 0.75);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+    z-index: 2000;
+}
+
+.success-popup.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.success-popup-card {
+    background: var(--bg-light);
+    border-radius: 18px;
+    box-shadow: 0 22px 45px rgba(0, 0, 0, 0.25);
+    padding: 1.75rem 1.75rem 1.5rem;
+    max-width: 420px;
+    width: min(94%, 420px);
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 1rem;
+    align-items: center;
+}
+
+.success-popup-card i {
+    color: #1dd15d;
+    font-size: 2rem;
+}
+
+.success-popup-card h3 {
+    margin: 0 0 0.25rem;
+    font-size: 1.25rem;
+}
+
+.success-popup-card p {
+    margin: 0;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+.success-popup-card button {
+    background: var(--accent-color);
+    color: var(--bg-color);
+    border: none;
+    border-radius: 999px;
+    padding: 0.85rem 1.2rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.success-popup-card button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(0, 123, 255, 0.2);
+}
+
+.whatsapp-button {
+    position: fixed;
+    bottom: 30px;
+    right: 90px;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.95rem 1.25rem;
+    background: #25D366;
+    color: #ffffff;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    z-index: 100;
+    text-decoration: none;
+}
+
+.whatsapp-button i {
+    font-size: 1.2rem;
+}
+
+.whatsapp-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(37, 211, 102, 0.35);
+}
+
 @media (max-width: 768px) {
     nav { 
         padding: 1.5rem 5%; 
